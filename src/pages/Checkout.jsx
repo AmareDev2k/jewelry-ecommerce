@@ -30,7 +30,7 @@ export default function Checkout() {
       to_email: form.email,
       order_id: orderId,
       orders: items.map(i => ({
-        image_url: i.image, // Ensure i.image is an absolute URL
+        image_html: `<img src="${i.image}" alt="item" style="height: 64px; width: 64px; object-fit: contain; display: block;" />`,
         name: i.name,
         units: i.quantity,
         price: i.price.toFixed(2)
