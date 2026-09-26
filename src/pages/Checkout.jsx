@@ -21,14 +21,25 @@ export default function Checkout() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'default_service'
     const templateId = import.meta.env.VITE_EMAILJS_ORDER_TEMPLATE_ID || 'default_template'
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'default_public_key'
+    
+    // Generate a fake order ID for the email
+    const orderId = "AUR-" + Math.floor(Math.random() * 1000000)
 
     const templateParams = {
       to_name: form.name,
       to_email: form.email,
-      address: form.address,
-      city: form.city,
-      total: totalPrice.toFixed(2),
-      order_details: items.map(i => `${i.name} (x${i.quantity})`).join(', ')
+      order_id: orderId,
+      orders: items.map(i => ({
+        image_url: i.image, // Ensure i.image is an absolute URL
+        name: i.name,
+        units: i.quantity,
+        price: i.price.toFixed(2)
+      })),
+      cost: {
+        shipping: "0.00",
+        tax: "0.00",
+        total: totalPrice.toFixed(2)
+      }
     }
 
     emailjs.send(serviceId, templateId, templateParams, publicKey)
