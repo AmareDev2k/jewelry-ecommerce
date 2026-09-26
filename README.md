@@ -1,76 +1,82 @@
-# Aurelia — High-End Fine Jewelry E-Commerce (React)
+<div align="center">
+  
+  # ✨ Aurelia
 
-An ultra-premium, agency-tier e-commerce experience for a luxury jewelry shop, built with React + Vite + React Router. It features a custom WebGL animated background, fluid haptic motion, and an editorial split layout.
+  *Masterfully crafted ornaments for the modern collector.*
 
-## Design System & UX Features
+  <br />
 
-- **Editorial Luxury Aesthetic**: Custom vanilla CSS implementation avoiding generic AI frameworks. Deep espresso text (`#1a1715`) on off-white creams (`#fdfbf7`) with a subtle fractal noise texture overlay.
-- **WebGL Aurora Background**: Uses `ogl` to render a slow, fluid, cinematic gradient mesh behind the site, ported from React Bits.
-- **Double-Bezel Architecture**: All product cards and summary containers are nested with an outer shell and an inner core, simulating machined glass on aluminum hardware.
-- **Fluid Motion Choreography**: Strictly engineered `cubic-bezier(0.32, 0.72, 0, 1)` transitions replacing default linear fades. Elements simulate physical mass on hover and click.
-- **Layout Archetypes**: 
-  - *Editorial Split*: Homepage hero uses massive typography paired with framed, asymmetric imagery.
-  - *Asymmetrical Bento*: Category grid breaks perfect symmetry for a more organic, gallery-like feel.
-- **Premium Typography**: High-contrast pairing of *Playfair Display* (Serif) and *Plus Jakarta Sans* (Geometric Sans) loaded via Google Fonts.
-- **Editorial Imagery**: Placeholder images have been swapped with 85mm-style macro photography from Unsplash to complete the luxury vibe.
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+  ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  ![Three.js](https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=three.js&logoColor=white)
 
-## Folder Structure
+</div>
 
-```
-jewelry-ecommerce/
-├── index.html
-├── package.json
-├── vite.config.js
-├── src/
-│   ├── main.jsx              # App entry point, wraps App in Router + CartProvider
-│   ├── App.jsx               # Route definitions & global WebGL Aurora background
-│   ├── index.css             # High-End Visual Design CSS engine
-│   ├── assets/               # Local assets
-│   ├── components/
-│   │   ├── Aurora.jsx        # React Bits WebGL background component
-│   │   ├── Aurora.css
-│   │   ├── Navbar.jsx        # Floating Fluid Island Navigation
-│   │   ├── Footer.jsx
-│   │   ├── ProductCard.jsx   # Double-Bezel nested cards
-│   │   └── Loader.jsx
-│   ├── context/
-│   │   └── CartContext.jsx   # Global cart state manager
-│   ├── data/
-│   │   └── products.js       # Unsplash-powered high-end mock data
-│   ├── pages/
-│   │   ├── Home.jsx          # Editorial Split hero & curated sections
-│   │   ├── Shop.jsx          # Category filtering
-│   │   ├── ProductDetail.jsx # Immersive PDP
-│   │   ├── Cart.jsx
-│   │   ├── Checkout.jsx
-│   │   ├── About.jsx
-│   │   └── Contact.jsx
-│   └── services/
-│       └── api.js            # Future API integration layer
-```
+<br />
 
-## Getting Started
+## ✦ The Vision
+**Aurelia** is a premium, high-end jewelry e-commerce platform. Moving away from generic templates, it is built with an **"Editorial Luxury"** design system. Expect deep charcoal backgrounds, warm cream typography, massive whitespace, and fluid, haptic micro-interactions that feel like a $150k agency build.
 
-```bash
-npm install
-npm run dev
-```
+### 🏆 Awwwards-Tier UI/UX
+- **Fluid Island Navigation:** A glassmorphic, detached navbar that transforms seamlessly into a screen-filling mobile menu.
+- **Magnetic Button Physics:** Custom `cubic-bezier` hover states simulating real-world mass and spring physics.
+- **Scroll Choreography:** Elements never load statically; they fade and slide into view utilizing smooth `IntersectionObserver` interpolations.
+- **Generative WebGL Backgrounds:** Featuring dynamic, noise-driven organic silk animations to create depth and texture (Powered by Three.js & React Three Fiber).
 
-Then open the URL Vite prints (usually http://localhost:5173).
+<br />
 
-## Build for production
+## ⚙️ Tech Stack
+- **Frontend Framework:** React 18
+- **Build Tool:** Vite 5
+- **Styling:** Tailwind CSS v4 + Vanilla CSS 
+- **Animation & 3D:** `@react-three/fiber`, `three.js`, `ogl`
+- **Routing:** React Router v6
 
-```bash
-npm run build
-npm run preview
-```
+<br />
 
-## Connecting a real backend
+## 🚀 Getting Started
 
-All data currently comes from `src/data/products.js` via `src/services/api.js`.
-To connect this to a real backend (e.g. Django REST Framework), just rewrite the functions in `src/services/api.js` to call `fetch('/api/products/')` etc. — no component code needs to change.
+To get a local copy up and running, follow these simple steps.
 
-## Notes
+### Prerequisites
+Make sure you have Node.js installed on your machine.
 
-- **Dependencies**: The `ogl` package is required for the Aurora background animation.
-- Checkout and Contact forms are wired to local state only (no real payment or email sending yet) — hook them up to your payment provider / backend when ready.
+### Installation
+1. Clone the repository
+   ```sh
+   git clone https://github.com/your-username/jewelry-ecommerce.git
+   ```
+2. Navigate to the project directory
+   ```sh
+   cd jewelry-ecommerce
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start the development server
+   ```sh
+   npm run dev
+   ```
+5. Open `http://localhost:5173` in your browser.
+
+<br />
+
+## 🗺️ Roadmap (Upcoming Features)
+- [x] Integrate High-End Visual Design System
+- [x] Mobile-responsive layout and Fluid Navigation
+- [ ] **Auth0 Integration:** Secure user login, signup, and session management. *(See `TODO.md`)*
+- [ ] **Payment Gateway:** Stripe integration for seamless checkout.
+- [ ] **Dynamic Cart:** Persistent cart state using local storage or backend sync.
+
+<br />
+
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<hr />
+
+<div align="center">
+  <i>Designed with uncompromising elegance.</i>
+</div>
