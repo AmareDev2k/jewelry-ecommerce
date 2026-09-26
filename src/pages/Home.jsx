@@ -12,11 +12,19 @@ export default function Home() {
 
   return (
     <div>
-      <section className="hero">
-        <div className="container hero-inner">
-          <h1>Timeless Pieces, Made to be Treasured</h1>
-          <p>Discover handcrafted rings, necklaces, earrings and bracelets.</p>
-          <Link to="/shop" className="btn">Shop the Collection</Link>
+      <section className="hero container">
+        <div className="hero-inner editorial-split">
+          <div className="editorial-content">
+            <span className="eyebrow-tag">Collection 01</span>
+            <h1>Masterfully crafted ornaments for the modern collector.</h1>
+            <p>Archival quality pieces cast in solid gold and set with ethically sourced stones. Designed to exist beyond seasons.</p>
+            <Link to="/shop" className="btn">Explore the Archive</Link>
+          </div>
+          <div className="editorial-media">
+            <div className="media-frame double-bezel-hero">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Editorial Jewelry" />
+            </div>
+          </div>
         </div>
       </section>
 
