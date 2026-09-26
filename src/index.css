@@ -272,7 +272,9 @@ button {
 .product-card img { 
   width: 100%; 
   aspect-ratio: 4 / 5; 
-  object-fit: cover; 
+  object-fit: contain; 
+  background: #ffffff;
+  padding: 24px;
   transition: transform var(--transition-slow);
 }
 .product-card:hover img {
@@ -380,8 +382,9 @@ button {
 .product-detail-grid img { 
   width: 100%; 
   border-radius: 2.5rem;
-  padding: 8px;
-  background: var(--border-shell);
+  padding: 40px;
+  background: #ffffff;
+  object-fit: contain;
   border: 1px solid var(--border-inner);
 }
 .description { font-size: 1.15rem; line-height: 1.8; opacity: 0.7; margin-bottom: 40px; }
@@ -415,10 +418,10 @@ button {
 .cart-item img { 
   width: 100%; 
   aspect-ratio: 1/1; 
-  object-fit: cover; 
+  object-fit: contain; 
   border-radius: 1.25rem; 
-  background: var(--bg-color);
-  padding: 8px;
+  background: #ffffff;
+  padding: 12px;
 }
 .cart-item-info h3 { font-size: 1.4rem; margin-bottom: 8px; }
 .cart-item-info .price { margin: 0; }
