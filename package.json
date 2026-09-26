@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/fiber": "^8.18.0",
     "@tailwindcss/vite": "^4.3.3",
     "ogl": "^1.0.11",
