@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "auth0": {
+      "source": "auth0/agent-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/auth0/skills/auth0/SKILL.md",
+      "computedHash": "c5676c4213815637d188df63a5ce4e164f139ea379897bb44742beec0f9852db"
+    },
     "brandkit": {
       "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
