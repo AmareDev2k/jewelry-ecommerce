@@ -1,8 +1,18 @@
-# Aurelia — Jewelry E-Commerce (React)
+# Aurelia — High-End Fine Jewelry E-Commerce (React)
 
-A starter e-commerce website for a jewelry shop, built with React + Vite + React Router.
-Includes a cart (React Context), product listing/filtering, product detail pages,
-a checkout form, and static About/Contact pages.
+An ultra-premium, agency-tier e-commerce experience for a luxury jewelry shop, built with React + Vite + React Router. It features a custom WebGL animated background, fluid haptic motion, and an editorial split layout.
+
+## Design System & UX Features
+
+- **Editorial Luxury Aesthetic**: Custom vanilla CSS implementation avoiding generic AI frameworks. Deep espresso text (`#1a1715`) on off-white creams (`#fdfbf7`) with a subtle fractal noise texture overlay.
+- **WebGL Aurora Background**: Uses `ogl` to render a slow, fluid, cinematic gradient mesh behind the site, ported from React Bits.
+- **Double-Bezel Architecture**: All product cards and summary containers are nested with an outer shell and an inner core, simulating machined glass on aluminum hardware.
+- **Fluid Motion Choreography**: Strictly engineered `cubic-bezier(0.32, 0.72, 0, 1)` transitions replacing default linear fades. Elements simulate physical mass on hover and click.
+- **Layout Archetypes**: 
+  - *Editorial Split*: Homepage hero uses massive typography paired with framed, asymmetric imagery.
+  - *Asymmetrical Bento*: Category grid breaks perfect symmetry for a more organic, gallery-like feel.
+- **Premium Typography**: High-contrast pairing of *Playfair Display* (Serif) and *Plus Jakarta Sans* (Geometric Sans) loaded via Google Fonts.
+- **Editorial Imagery**: Placeholder images have been swapped with 85mm-style macro photography from Unsplash to complete the luxury vibe.
 
 ## Folder Structure
 
@@ -13,28 +23,30 @@ jewelry-ecommerce/
 ├── vite.config.js
 ├── src/
 │   ├── main.jsx              # App entry point, wraps App in Router + CartProvider
-│   ├── App.jsx                # Route definitions
-│   ├── index.css              # Global styles
-│   ├── assets/                 # Images/icons you add later
+│   ├── App.jsx               # Route definitions & global WebGL Aurora background
+│   ├── index.css             # High-End Visual Design CSS engine
+│   ├── assets/               # Local assets
 │   ├── components/
-│   │   ├── Navbar.jsx
+│   │   ├── Aurora.jsx        # React Bits WebGL background component
+│   │   ├── Aurora.css
+│   │   ├── Navbar.jsx        # Floating Fluid Island Navigation
 │   │   ├── Footer.jsx
-│   │   ├── ProductCard.jsx
+│   │   ├── ProductCard.jsx   # Double-Bezel nested cards
 │   │   └── Loader.jsx
 │   ├── context/
-│   │   └── CartContext.jsx    # Cart state: add/remove/update quantity, totals
+│   │   └── CartContext.jsx   # Global cart state manager
 │   ├── data/
-│   │   └── products.js        # Sample jewelry product data (swap for a real API)
+│   │   └── products.js       # Unsplash-powered high-end mock data
 │   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Shop.jsx           # Category filtering via URL query param
-│   │   ├── ProductDetail.jsx
+│   │   ├── Home.jsx          # Editorial Split hero & curated sections
+│   │   ├── Shop.jsx          # Category filtering
+│   │   ├── ProductDetail.jsx # Immersive PDP
 │   │   ├── Cart.jsx
 │   │   ├── Checkout.jsx
 │   │   ├── About.jsx
 │   │   └── Contact.jsx
 │   └── services/
-│       └── api.js             # Data-fetching layer — point this at a real backend later
+│       └── api.js            # Future API integration layer
 ```
 
 ## Getting Started
@@ -56,13 +68,9 @@ npm run preview
 ## Connecting a real backend
 
 All data currently comes from `src/data/products.js` via `src/services/api.js`.
-To connect this to a real backend (e.g. Django REST Framework, which pairs well
-if you're already using Django), just rewrite the functions in `src/services/api.js`
-to call `fetch('/api/products/')` etc. — no component code needs to change.
+To connect this to a real backend (e.g. Django REST Framework), just rewrite the functions in `src/services/api.js` to call `fetch('/api/products/')` etc. — no component code needs to change.
 
 ## Notes
 
-- Product images use placeholder URLs (placehold.co) — swap them for real photos
-  in `src/data/products.js` or `src/assets/`.
-- Checkout and Contact forms are wired to local state only (no real payment or
-  email sending yet) — hook them up to your payment provider / backend when ready.
+- **Dependencies**: The `ogl` package is required for the Aurora background animation.
+- Checkout and Contact forms are wired to local state only (no real payment or email sending yet) — hook them up to your payment provider / backend when ready.
