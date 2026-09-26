@@ -1,14 +1,14 @@
-
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-/* Editoral Luxury Aesthetic - $150k Agency Vibe */
+@import "tailwindcss";
+
+/* Editoral Luxury Aesthetic - $150k Agency Vibe (Dark Mode) */
 :root {
-  --bg-color: #fdfbf7;
-  --text-color: #1a1715;
-  --accent-color: #8c7b6f;
-  --border-light: rgba(26, 23, 21, 0.1);
-  --border-shell: rgba(26, 23, 21, 0.03);
-  --border-inner: rgba(26, 23, 21, 0.05);
+  --bg-color: #1a1715;
+  --text-color: #fdfbf7;
+  --accent-color: #c4b5a9;
+  --border-light: rgba(253, 251, 247, 0.15);
+  --border-shell: rgba(253, 251, 247, 0.05);
+  --border-inner: rgba(253, 251, 247, 0.08);
   
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -123,7 +123,7 @@ button {
 
 /* Hero Section */
 .hero {
-  padding: 200px 0 160px;
+  padding: clamp(120px, 15vw, 200px) 0 clamp(80px, 10vw, 160px);
   position: relative;
   overflow: hidden;
 }
@@ -152,13 +152,13 @@ button {
   opacity: 0.7;
 }
 .editorial-content h1 { 
-  font-size: 5rem; 
+  font-size: clamp(2.8rem, 7vw, 5.5rem); 
   line-height: 1.05;
   margin-bottom: 32px;
   letter-spacing: -0.02em;
 }
 .editorial-content p { 
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
   opacity: 0.7;
   margin-bottom: 48px;
   line-height: 1.6;
@@ -227,8 +227,8 @@ button {
 
 .section-title {
   text-align: center;
-  font-size: 3.5rem;
-  margin: 160px 0 80px;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin: clamp(80px, 15vw, 160px) 0 clamp(40px, 8vw, 80px);
   letter-spacing: -0.02em;
 }
 .section-title::before {
@@ -245,9 +245,9 @@ button {
 /* Product grid - Double Bezel Card */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 40px;
-  margin-bottom: 120px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(24px, 4vw, 40px);
+  margin-bottom: clamp(60px, 10vw, 120px);
 }
 .product-card {
   background: var(--border-shell);
@@ -306,12 +306,12 @@ button {
 }
 
 /* Category Grid - Asymmetrical Bento */
-.categories { margin-bottom: 160px; }
+.categories { margin-bottom: clamp(80px, 15vw, 160px); }
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 300px);
-  gap: 24px;
+  grid-template-rows: repeat(2, minmax(200px, 300px));
+  gap: clamp(16px, 2vw, 24px);
 }
 .category-card {
   background: var(--border-shell);
@@ -487,23 +487,38 @@ button {
 
 @media (max-width: 1024px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-  .category-card:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-  .category-card:nth-child(2), .category-card:nth-child(3), .category-card:nth-child(4) { grid-column: span 1; }
+  .category-card { padding: 32px; min-height: 250px; }
+  .category-card:nth-child(1) { grid-column: span 2; grid-row: span 1; font-size: 3rem; }
+  .category-card:nth-child(2), .category-card:nth-child(3), .category-card:nth-child(4) { grid-column: span 1; font-size: 2rem; }
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 24px; }
-  .editorial-content h1 { font-size: 3.5rem; }
-  .hero-inner.editorial-split { grid-template-columns: 1fr; gap: 48px; }
-  .section-title { font-size: 2.5rem; margin: 100px 0 60px; }
-  .product-detail-grid, .checkout-grid, .footer-inner { grid-template-columns: 1fr; gap: 48px; }
+  .container { padding: 0 20px; }
+  .hero-inner.editorial-split { grid-template-columns: 1fr; gap: 40px; }
+  
+  .category-grid { grid-template-columns: 1fr; }
+  .category-card:nth-child(1), .category-card:nth-child(2), .category-card:nth-child(3), .category-card:nth-child(4) { 
+    grid-column: span 1; 
+    grid-row: span 1; 
+    font-size: 2.2rem;
+    min-height: 200px;
+  }
+  
+  .product-detail-grid { grid-template-columns: 1fr; gap: 40px; }
+  .checkout-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  
   .navbar { padding: 0 12px; top: 12px; }
-  .navbar-inner { min-width: 100%; border-radius: 9999px; padding: 12px 24px; }
+  .navbar-inner { min-width: 100%; width: 100%; border-radius: 9999px; padding: 12px 20px; }
   .nav-links { display: none; }
-  .cart-item { grid-template-columns: 80px 1fr; grid-template-areas: "img info" "img qty" "img total" "img remove"; gap: 16px; padding: 16px; }
-  .cart-item img { grid-area: img; }
-  .cart-item-info { grid-area: info; }
-  .cart-item input { grid-area: qty; }
-  .cart-item .line-total { grid-area: total; }
-  .cart-item .remove-btn { grid-area: remove; text-align: left; }
+  
+  .cart-item { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+  }
+  .cart-item img { width: 120px; height: 120px; }
+  .cart-item-info, .cart-item .line-total, .cart-item input { width: 100%; }
 }
