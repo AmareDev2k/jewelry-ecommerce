@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard.jsx'
+import ScrollReveal from '../components/ScrollReveal.jsx'
 import { getProducts } from '../services/api.js'
 
 export default function Home() {
@@ -28,25 +29,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container">
-        <h2 className="section-title">Featured Pieces</h2>
-        <div className="product-grid">
-          {featured.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </section>
+      <ScrollReveal>
+        <section className="container">
+          <h2 className="section-title">Featured Pieces</h2>
+          <div className="product-grid">
+            {featured.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
 
-      <section className="categories container">
-        <h2 className="section-title">Shop by Category</h2>
-        <div className="category-grid">
-          {['Rings', 'Necklaces', 'Earrings', 'Bracelets'].map((cat) => (
-            <Link key={cat} to={`/shop?category=${cat}`} className="category-card">
-              {cat}
-            </Link>
-          ))}
-        </div>
-      </section>
+      <ScrollReveal delay={200}>
+        <section className="categories container">
+          <h2 className="section-title">Shop by Category</h2>
+          <div className="category-grid">
+            {['Rings', 'Necklaces', 'Earrings', 'Bracelets'].map((cat) => (
+              <Link key={cat} to={`/shop?category=${cat}`} className="category-card">
+                {cat}
+              </Link>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
     </div>
   )
 }
